@@ -1,3 +1,5 @@
+import os
+os.environ["KERAS_BACKEND"] = "tensorflow" 
 import streamlit as st
 import cv2
 import keras
