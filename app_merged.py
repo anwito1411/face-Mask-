@@ -1,5 +1,6 @@
 import streamlit as st
 import cv2
+import keras
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
@@ -13,8 +14,10 @@ st.title("😷 Real-Time Face Mask Detector")
 @st.cache_resource
 def load_my_model():
     try:
-        return load_model("mask_detector.keras", compile=False)
+        # We use keras.models.load_model directly for better compatibility
+        return keras.models.load_model("mask_detector.keras", compile=False)
     except Exception as e:
+        # This will show us the real error if it fails
         st.error(f"CRITICAL ERROR: {e}")
         return None
 
