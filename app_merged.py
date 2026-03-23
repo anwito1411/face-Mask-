@@ -16,11 +16,9 @@ st.title("😷 Real-Time Face Mask Detector")
 @st.cache_resource
 def load_my_model():
     try:
-        # We use keras.models.load_model directly for better compatibility
         return keras.models.load_model("mask_detector.keras", compile=False)
     except Exception as e:
-        # This will show us the real error if it fails
-        st.error(f"CRITICAL ERROR: {e}")
+        st.error(f"Error: {e}")
         return None
 
 model = load_my_model()
