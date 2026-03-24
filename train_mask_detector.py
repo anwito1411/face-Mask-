@@ -16,7 +16,7 @@ from sklearn.preprocessing import LabelBinarizer
 
 # 1. Init Variables
 INIT_LR = 1e-4
-EPOCHS = 20
+EPOCHS = 50
 BS = 32
 DIRECTORY = r"E:\FACE MASK\mask_detection_project\Datasets"
 CATEGORIES = ["with_mask", "without_mask"]
